@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Calculator } from "./apps/calculator";
+import { User } from "./apps/user";
+// import logo from './logo.svg';
+// import './App.css';
 
-function hello(user){
 
-  if (user){
-    return <div>
-           <span>{user.name}</span>
-           <strong>{user.last_name}</strong>
-         </div>;
-  }
-  return 'undefined';
-}
+// function hello(user){
+
+//   if (user){
+//     return <div>
+//            <span>{user.name}</span>
+//            <strong>{user.last_name}</strong>
+//          </div>;
+//   }
+//   return 'undefined';
+// }
 
 /*function это компонент*/ 
 
 function App() {
 
-  const a = 10;
-  const b = 15;
+  // const a = 10;
+  // const b = 15;
   
   let user = {
        name: 'John',
@@ -42,25 +45,32 @@ function App() {
         },
     ],
     };
+
   const salaries = user.salaries.map((salary, index) =>{
     return <tr><td>{index + 1}</td><td>{salary.salary}</td><td>{salary.from_date}</td></tr> 
   });
 
+// каждый html тег это компонент
 
 
-
-  const c = <span>Hello</span>;
-  const name = hello();
+//   const c = <span>Hello</span>;
+//   const name = hello();
 
 /*выводим значение переменной    A: {a} */
   return (
     <div>
-     <p> A: {a} </p>  
+     {/* <p> A: {a} </p>  
      <p> B: {b} </p>  
 
      <p> Sum: {a + b} </p>  
 
      <p>{c}, {name}</p>  
+
+     <Calculator/> 
+     <Calculator/> 
+     <Calculator/>  */}
+     <User user={user}/>
+
      <table>
       <thead>
         <tr>
@@ -72,15 +82,8 @@ function App() {
         <tbody>
           {salaries}
         </tbody>
-       {/*<tfoot>
-        <tr>
-          <td>#</td>
-          <td>Salary</td>
-          <td>Date</td>
-        </tr>
-       </tfoot>*/ }
      </table>
-    
+
     </div>
   );
 }
