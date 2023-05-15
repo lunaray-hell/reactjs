@@ -26,6 +26,8 @@ export function User() {
      ],
      };
 
+     
+
     const salaries = user.salaries.map((salary, index) =>{
      return <tr key={index}><td>{index + 1}</td><td>{salary.salary}</td><td>{salary.from_date}</td></tr> 
 
